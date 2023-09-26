@@ -28,9 +28,9 @@ def main(page: ft.Page):
 
     def dropdown_changed(e):
         if dd.value == 'По возрастанию цены':
-            keys_gadgets.sort(key=lambda x: data['gadgets'][x]['price']['current'])
+            keys_gadgets.sort(key=lambda x: data['gadgets'][x]['price']['current'] if not 'min' in data['gadgets'][x]['price'] else data['gadgets'][x]['price']['min'])
         else:
-            keys_gadgets.sort(key=lambda x: data['gadgets'][x]['price']['current'], reverse=True)
+            keys_gadgets.sort(key=lambda x: data['gadgets'][x]['price']['current'] if not 'min' in data['gadgets'][x]['price'] else data['gadgets'][x]['price']['min'], reverse=True)
         images.controls = []
         add_images(images)
         page.update()
