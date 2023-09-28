@@ -60,6 +60,7 @@ def parser():
     with open('data.json', 'w', encoding='utf-8') as file:
         json.dump(root_dict, file, ensure_ascii=False)
     print(root_dict)
+    return root_dict
 
 
 if __name__ == '__main__':

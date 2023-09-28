@@ -9,7 +9,9 @@ def main(page: ft.Page):
         container_1.content = pr
         bt.disabled = True
         page.update()
-        parser_dns.parser()
+        global data, keys_gadgets
+        data = parser_dns.parser()
+        keys_gadgets = list(data['gadgets'].keys())
         container_1.content = None
         bt.disabled = False
         images.controls = []
